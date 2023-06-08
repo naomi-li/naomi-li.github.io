@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{%block title %}
+    {{id}}
+{% endblock%}
+
+{% block content %}    
+    <div class="header">
+        <div>
+        .</div>
+        <h2>{{music.Title}}</h2>
+    </div>
+
+    <a href="/all">
+            <button> << View all music</button>
+    </a>
+
+    <div class="center1">
+        <h5>ID </h5>
+        <p>{{ music.ID }}</p>
+        <h5>Composer Last Name</h5>
+        <p>{{ music.ComposerLAST }}</p>
+        <h5>Composer First Name</h5>
+        <p>{{ music.ComposerFIRST }}</p>
+        <h5>Arranger / Editor Last Name</h5>
+        <p>{{ music.ArrangerEditorLAST }}</p>
+        <h5>Arranger / Editor First Name</h5>
+        <p>{{ music.ArrangerEditorFIRST }}</p>
+        <h5>Multiple Envelopes</h5>
+        <p>{{ music.MultipleEnvelopes }}</p>
+        <h5>Level of The Piece</h5>
+        <p>{{ music.Level }}</p>
+        <h5>Ensemble</h5>
+        <p>{{ music.Ensemble }}</p>
+        <h5>Conductor Score</h5>
+        <p>{{ music.ConductorScore }}</p>
+        <h5>Parts</h5>
+        <p>{{ music.Parts }}</p>
+        <h5>Complete Parts</h5>
+        <p>{{ music.CompleteParts }}</p>
+        <h5>Checked Out By...</h5>
+        <p>{{ music.CheckedOut }}</p>
+        <h5>Publisher</h5>
+        <p>{{ music.Publisher }}</p>
+        <h5>Source</h5>
+        <p>{{ music.Source }}</p>
+        <h5>Xmas Piece</h5>
+        <p>{{ music.Xmas }}</p>
+        <h5>Purchase Price</h5>
+        <p>{{ music.PurchasePrice }}</p>
+        <h5>Purchase Date</h5>
+        <p>{{ music.PurchaseDate }}</p>
+        <h5>Comments</h5>
+        <p>{{ music.Comments }}</p>
+
+    </div>
+
+
+    
+
+{% endblock %}
+
+<!---  , CheckedOut, Publisher, Source, Xmas, PurchasePrice, PurchaseDate, Comments->

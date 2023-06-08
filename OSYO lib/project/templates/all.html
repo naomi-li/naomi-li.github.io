@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{%block title %}
+    All Queries
+{% endblock%}
+
+{% block content %}    
+    
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <a href="/all">All</a>
+        <a href="/all/ensemble/small ensemble">Small Ensemble</a>
+        <a href="/all/ensemble/large ensemble">Large Ensemble</a>
+        <a href="/all/ensemble/philharmonia">Philharmonia</a>
+        <a href="/all/ensemble/sinfonia">Sinfonia</a>
+        <a href="/all/ensemble/string orchestra">String Orchestra</a>
+        <a href="/all/ensemble/youth band">Youth Band</a>
+        <a href="/all/ensemble/symphony">Symphony</a>
+        <a href="/all/ensemble/other">Other</a>
+    </div>
+    
+    
+    <div class = "main">
+        <div class="sticky">
+            <h2>Music Library</h2>
+        </div>
+
+        <input class = "right_header" type="text" id="myInput" onkeyup = "myFunction()" placeholder = "Search for names..">
+
+                <!-- pagination elements -->
+
+        
+        
+        <table id = "myTable" class ="center">
+            <thead>
+                <tr>
+                    <th>Catalogue Number</th>
+                    <th>Composer Last Name</th>
+                    <th>Composer First Name</th>
+                    <th>Title</th>
+                    <th>Read more</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Display overview of all the entries available-->
+                <tr>
+                    {% for log in all %}
+                        <tr>
+                            <td>{{ log.ID }}</td>
+                            <td>{{ log.ComposerLast }}</td>
+                            <td>{{ log.ComposerFirst }}</td>
+                            <td>{{ log.title }}</td>
+                            <td>
+                                <a href="{{ url_for('get_id', id=log.ID)}}" class="button">Detail</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+    
+
+{% endblock %}
+
+    
+
